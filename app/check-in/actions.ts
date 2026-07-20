@@ -50,8 +50,11 @@ export async function checkIn(
   }
 
   // Mark present
+  const decodedUser = user as Record<string, unknown>;
   const studentName =
-    (user as Record<string, unknown>).displayName as string | undefined;
+    (decodedUser.displayName as string) ||
+    (decodedUser.name as string) ||
+    undefined;
   await markPresent(
     classDoc.sheetId,
     user.email,
