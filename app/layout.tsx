@@ -16,6 +16,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Trainers IT — Attendance",
   description: "QR-based attendance system for Trainers IT Institute",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function RootLayout({
